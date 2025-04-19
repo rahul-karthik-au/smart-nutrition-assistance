@@ -8,7 +8,7 @@ Amplify.configure(awsConfig);
 export default function Home() {
   return (
     <Authenticator>
-    {({ signOut, user }) => (
+    {({ signOut }) => (
       <main>
         <h1>Hello</h1>
         <button onClick={signOut}>Sign out</button>
