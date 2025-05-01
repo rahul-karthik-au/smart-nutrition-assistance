@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "sna3f44a4de_identitypool_3f44a4de",
+    "identityPoolName": "nutrismart4e048f91_identitypool_4e048f91",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "sna3f44a4de",
-    "userPoolName": "sna3f44a4de_userpool_3f44a4de",
+    "resourceNameTruncated": "nutris4e048f91",
+    "userPoolName": "nutrismart4e048f91_userpool_4e048f91",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,10 +31,10 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "sna3f43f44a4de_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "nutris4e048f91_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "3f44a4de",
-    "resourceName": "sna3f44a4de",
+    "sharedId": "4e048f91",
+    "resourceName": "nutrismart4e048f91",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
     "usernameAttributes": [
