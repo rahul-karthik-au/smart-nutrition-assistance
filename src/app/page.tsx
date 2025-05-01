@@ -9,23 +9,23 @@ import { confirmSignUp } from 'aws-amplify/auth';
 
 Amplify.configure(awsAmplifyConfig);
 export default function Home() {
-  const [email,setEmail]=useState("")
-  const [password,setPassword]=useState("")
-  const [code,setCode]=useState("")
-  async function handleSubmit(){
-    const { isSignUpComplete, userId, nextStep } = await signUp({
-      username: email,
-      password: password,
-    });
-    console.log(isSignUpComplete,userId,nextStep)
-  }
-  async function final(){
-    const { isSignUpComplete, nextStep } = await confirmSignUp({
-      username: email,
-      confirmationCode: code
-    });
-    console.log(isSignUpComplete,nextStep)
-  }
+  // const [email,setEmail]=useState("")
+  // const [password,setPassword]=useState("")
+  // const [code,setCode]=useState("")
+  // async function handleSubmit(){
+  //   const { isSignUpComplete, userId, nextStep } = await signUp({
+  //     username: email,
+  //     password: password,
+  //   });
+  //   console.log(isSignUpComplete,userId,nextStep)
+  // }
+  // async function final(){
+  //   const { isSignUpComplete, nextStep } = await confirmSignUp({
+  //     username: email,
+  //     confirmationCode: code
+  //   });
+  //   console.log(isSignUpComplete,nextStep)
+  // }
   function handleClick(){
     console.log("Clicked Creat Account")
   }
