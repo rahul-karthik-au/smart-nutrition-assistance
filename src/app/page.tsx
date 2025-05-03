@@ -2,9 +2,8 @@
 import { Amplify } from 'aws-amplify';
 import awsAmplifyConfig from '../aws-exports'
 import { useState } from 'react';
-import { signUp } from 'aws-amplify/auth';
 import VerificationModal from '../components/VerificationModal';
-import { confirmSignUp,signIn,signOut } from 'aws-amplify/auth';
+import { confirmSignUp,signIn,signOut,signUp } from 'aws-amplify/auth';
 import { useRouter } from 'next/navigation';
 
 Amplify.configure(awsAmplifyConfig);
@@ -25,7 +24,7 @@ export default function Home() {
     setShowModal(true)
   }
   const handleLogin=async()=>{
-    await signOut()
+    await signOut();
     const {nextStep}=await signIn({
       username:email,
       password:password
@@ -47,7 +46,7 @@ export default function Home() {
         <h1 className='view-heading'>Get Started Today</h1>
         <h2 className='view-heading2'>Join thousands of users who have transformed their nutrition habits with NutriSmart's personalized guidance.</h2>
         <button className='view-btn' onClick={()=>setView("signup")}>Create Your Account</button>
-        <p className='view-btn-p'>Do you have an account? <button className='view-p-btn' onClick={()=>setView("signin")}>Sign in</button></p>
+        <p className='view-btn-p'>Do you have an account? <button className='view-p-btn' onClick={()=>setView("signin")}>Log in</button></p>
       </div>)
     }
     else if(view==="signin"){
@@ -66,7 +65,7 @@ export default function Home() {
         <input type="password" id="password" name="password" className='view-input' placeholder='Password' value={password} onChange={(e)=>setPassword(e.target.value)} />
         <input type="password" id="cpassword" name="password" className='view-input' placeholder='Confirm Password' value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)} />
         <button className="view-btn" onClick={handleSignup}>Sign Up</button>
-        <p className='view-btn-p'>Do you have an account? <button className='view-p-btn' onClick={()=>setView("signin")}>log in</button></p>
+        <p className='view-btn-p'>Do you have an account? <button className='view-p-btn' onClick={()=>setView("signin")}>Log in</button></p>
         {showModal && <VerificationModal isOpen={showModal} onClose={()=>setShowModal(false)} onVerify={handleVerify} />}      
         </div>)
     }
