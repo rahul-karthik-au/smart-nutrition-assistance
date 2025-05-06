@@ -5,6 +5,7 @@ import { useState } from 'react';
 import VerificationModal from '../components/VerificationModal';
 import { confirmSignUp,signIn,signOut,signUp } from 'aws-amplify/auth';
 import { useRouter } from 'next/navigation';
+import { useAuthContext } from '@/context/AuthContext';
 
 Amplify.configure(awsAmplifyConfig);
 export default function Home() {
@@ -14,7 +15,8 @@ export default function Home() {
   const [password,setPassword]=useState("")
   const [confirmPassword,setConfirmPassword]=useState("")
   const [showModal, setShowModal] = useState(false);
-  
+  const userCheck=useAuthContext();
+  console.log(userCheck?.isLogedin);
   const handleSignup=async()=>{
     const { isSignUpComplete, userId, nextStep } = await signUp({
       username: email,
@@ -29,6 +31,7 @@ export default function Home() {
       username:email,
       password:password
     })
+    userCheck?.setIsLogedin(true)
     if(nextStep.signInStep === "DONE")router.push("/dashboard")
   }
 
