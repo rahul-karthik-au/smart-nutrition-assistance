@@ -17,6 +17,7 @@ export default function Home() {
   const [showModal, setShowModal] = useState(false);
   const userCheck=useAuthContext();
   console.log(userCheck?.isLogedin);
+  console.log(userCheck?.user);
   const handleSignup=async()=>{
     const { isSignUpComplete, userId, nextStep } = await signUp({
       username: email,

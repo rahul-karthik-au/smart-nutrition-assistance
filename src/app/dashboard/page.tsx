@@ -7,6 +7,7 @@ const dashboardPage = () => {
     const router=useRouter();
     const userCheck=useAuthContext();
     console.log(userCheck?.isLogedin);
+    console.log(userCheck?.user);
     useEffect(()=>{
         if(userCheck?.isLogedin === false)router.push("/")
     },[])

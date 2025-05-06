@@ -1,10 +1,8 @@
 "use client"
-import { createContext, useContext, useState } from "react"
+import { getCurrentUser,} from "aws-amplify/auth"
+import { createContext, useContext, useEffect, useState } from "react"
 
-interface User {
-    name:string,
-    age:number
-}
+type User = Awaited<ReturnType<typeof getCurrentUser>>
 
 interface AuthContextType{
     user:User | null,
@@ -17,6 +15,18 @@ const AuthContext = createContext<AuthContextType | null>(null)
 export const AuthContextPovider=({children}:{children: React.ReactNode})=>{
     const [user,setUser] = useState< User | null>(null)
     const [isLogedin,setIsLogedin]=useState<boolean>(false)
+    useEffect(()=>{
+        const fetchCurrentUser=async()=>{
+            try{
+                const currentUser:User=await getCurrentUser();
+                setUser(currentUser);
+            }
+            catch(err){
+                console.log(err)
+            }
+        }
+        if(isLogedin)fetchCurrentUser()
+    },[isLogedin])
     return(<AuthContext.Provider value={{user,isLogedin,setIsLogedin}}>
         {children}
     </AuthContext.Provider>)
