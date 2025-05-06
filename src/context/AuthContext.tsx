@@ -26,6 +26,7 @@ export const AuthContextPovider=({children}:{children: React.ReactNode})=>{
             }
         }
         if(isLogedin)fetchCurrentUser()
+        else setUser(null)
     },[isLogedin])
     return(<AuthContext.Provider value={{user,isLogedin,setIsLogedin}}>
         {children}
