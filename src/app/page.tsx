@@ -43,6 +43,8 @@ export default function Home() {
           confirmationCode: code
         });
         console.log(isSignUpComplete,nextStep)
+        userCheck?.setIsLogedin(true)
+        if(nextStep.signUpStep === "DONE")router.push("/onboarding")
   }
   const renderView=()=>{
     if(view==="initial"){
