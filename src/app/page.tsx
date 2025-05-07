@@ -3,7 +3,7 @@ import { Amplify } from 'aws-amplify';
 import awsAmplifyConfig from '../aws-exports'
 import { useState } from 'react';
 import VerificationModal from '../components/VerificationModal';
-import { confirmSignUp,signIn,signOut,signUp } from 'aws-amplify/auth';
+import { confirmSignUp,signIn,signOut,signUp,autoSignIn,confirmSignIn } from 'aws-amplify/auth';
 import { useRouter } from 'next/navigation';
 import { useAuthContext } from '@/context/AuthContext';
 
@@ -22,6 +22,14 @@ export default function Home() {
     const { isSignUpComplete, userId, nextStep } = await signUp({
       username: email,
       password: password,
+      options:{
+        userAttributes: {
+          email: email,
+        },
+        autoSignIn: {
+          authFlowType: 'USER_AUTH',
+        },
+      }
     });
     console.log(isSignUpComplete,userId,nextStep)
     setShowModal(true)
@@ -31,6 +39,7 @@ export default function Home() {
     const {nextStep}=await signIn({
       username:email,
       password:password
+      
     })
     userCheck?.setIsLogedin(true)
     if(nextStep.signInStep === "DONE")router.push("/dashboard")
@@ -43,8 +52,25 @@ export default function Home() {
           confirmationCode: code
         });
         console.log(isSignUpComplete,nextStep)
-        userCheck?.setIsLogedin(true)
-        if(nextStep.signUpStep === "DONE")router.push("/onboarding")
+        if(nextStep.signUpStep === "COMPLETE_AUTO_SIGN_IN"){
+          const { nextStep } = await autoSignIn();
+          console.log(nextStep)
+          if(nextStep.signInStep === "CONTINUE_SIGN_IN_WITH_FIRST_FACTOR_SELECTION"){
+            const {nextStep}=await confirmSignIn({
+              challengeResponse: "PASSWORD",
+            })
+            if(nextStep.signInStep==="CONFIRM_SIGN_IN_WITH_PASSWORD"){
+              const{nextStep}=await confirmSignIn({
+                challengeResponse: password,
+            })
+              if(nextStep.signInStep==="DONE"){
+                userCheck?.setIsLogedin(true)
+                router.push("/onboarding")
+              }
+            }
+            
+          }
+        }
   }
   const renderView=()=>{
     if(view==="initial"){
