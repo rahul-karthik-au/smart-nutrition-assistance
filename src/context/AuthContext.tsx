@@ -1,8 +1,8 @@
 "use client"
-import { fetchUserAttributes } from "aws-amplify/auth"
+import { getCurrentUser } from "aws-amplify/auth"
 import { createContext, useContext, useEffect, useState } from "react"
 
-type User = Awaited<ReturnType<typeof fetchUserAttributes>>
+type User = Awaited<ReturnType<typeof getCurrentUser>>
 
 interface AuthContextType{
     user:User | null,
@@ -18,7 +18,7 @@ export const AuthContextPovider=({children}:{children: React.ReactNode})=>{
     useEffect(()=>{
         const fetchCurrentUser=async()=>{
             try{
-                const currentUser:User=await fetchUserAttributes();
+                const currentUser:User=await getCurrentUser();
                 setUser(currentUser);
             }
             catch(err){
