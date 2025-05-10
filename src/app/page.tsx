@@ -1,6 +1,6 @@
 "use client";
 import { Amplify } from 'aws-amplify';
-import awsAmplifyConfig from '../aws-exports'
+import awsAmplifyConfig from '../aws-exports.js'
 import { useState } from 'react';
 import VerificationModal from '../components/VerificationModal';
 import { confirmSignUp,signIn,signOut,signUp,autoSignIn,confirmSignIn } from 'aws-amplify/auth';

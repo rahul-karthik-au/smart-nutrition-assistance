@@ -5,6 +5,10 @@ import GoalsInfo from "@/components/GoalsInfo"
 import MedicalInfo from "@/components/MedicalInfo"
 import { useRouter } from "next/navigation"
 import styles from './onboarding.module.css'
+import { generateClient } from 'aws-amplify/data';
+import { UserProfile } from "@/API"
+import { createUserProfile } from "@/graphql/mutations"
+import { type CreateUserProfileInput } from "@/API"
 
 interface userData{
     firstname:string,
@@ -23,11 +27,18 @@ interface userData{
 }
 
 const onboardingPage=()=>{
+    const client = generateClient<UserProfile>();
     const router=useRouter();
     const [step,setStep]=useState(0)
+    const handleSubmit=async()=>{
+        const input: CreateUserProfileInput = user;
+        const result=await client.graphql({query:createUserProfile,variables:{input:input}})
+        console.log(result)
+    }
     const handleBack=()=>setStep((s)=>s-1)
     const handleNext=()=>{
         if(step===2){
+            handleSubmit()
             router.push("/dashboard")
         }
         else{
