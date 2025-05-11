@@ -7,14 +7,15 @@ import  photo  from "../../../public/approved.png"
 import icon from "../../../public/ChatGPT Image May 10, 2025 at 08_53_01 PM.png"
 import Image from "next/image";
 import Link from 'next/link';
+import { Gauge,gaugeClasses } from '@mui/x-charts/Gauge';
+import { Calendar,Plus,CirclePlus,Sun,Beef,Milk,Banana,LayoutDashboard,Utensils,ChartPie,Salad,Bot,Settings,LogOut } from 'lucide-react'
 
 const navItems = [
-    { label: 'Dashboard', href: '/dashboard'},
-    { label: 'Meal Recommendations', href: '/mealrecommendation' },
-    { label: 'Nutrition Tracker', href: '/nutritiontracker' },
-    { label: 'Meal Tracker',href: '/mealtracker'},
-    { label: 'Recipes Finder',href: '/recipesfinder'},
-    { label: 'Ai Assistance',href: '/aiassistance'}
+    { label: 'Dashboard', href: '/dashboard',icon: <LayoutDashboard className={styles.icon} size={30} /> },
+    { label: 'Meal Recommendations', href: '/mealrecommendation',icon:<Utensils className={styles.icon} size={30} /> },
+    { label: 'Nutrition Tracker', href: '/nutritiontracker',icon:<ChartPie className={styles.icon} size={30} /> },
+    { label: 'Meal Tracker',href: '/mealtracker',icon:<Salad className={styles.icon} size={30} />},
+    { label: 'Ai Assistance',href: '/aiassistance',icon:<Bot className={styles.icon} size={30} />}
   ];
 
 const dashboardPage = () => {
@@ -45,14 +46,15 @@ const dashboardPage = () => {
         <div className={`${styles.sidebar_navigation} ${styles.border_bottom}`}>
             <ul>
             {navItems.map((item)=>{return(<li key={item.label} className={`${pathname === item.href ? styles.active : ''}`} >
-            <Link href={item.href}>{item.label}</Link>
+            
+            <Link href={item.href}>{item.icon}{item.label}</Link>
             </li>)})} 
             </ul>
         </div>
         <div className={styles.sidebar_footer}>
-            <div>Settings</div>
+            <div><Settings className={styles.icon} size={30} />Settings</div>
             <div>
-                <button onClick={()=>handleClick()}>Sign Out</button>
+            <LogOut className={styles.icon} size={30} /><button onClick={()=>handleClick()}>Sign Out</button>
             </div>
         </div>
     </div>
@@ -60,8 +62,13 @@ const dashboardPage = () => {
         <div className={`${styles.main_header} ${styles.border_bottom}`}>
             <div className={styles.heading}>DashBoard</div>
             <div className={styles.main_subheader}>
-                <div className={styles.date}>{new Date().toLocaleDateString('en-US',{year: 'numeric', month: 'long', day: 'numeric'})}</div>
-                <div><button className={styles.main_btn}>Add Food</button></div>
+                <div className={styles.date}>
+                    <Calendar className={styles.icon}/>
+                    <div className={styles.icon_content}>{new Date().toLocaleDateString('en-US',{year: 'numeric', month: 'long', day: 'numeric'})}</div></div>
+                <div><button className={styles.main_btn}>
+                    <Plus className={styles.icon} size={25} color="#f4faf3"/>
+                    <p className={styles.icon_content}>Add Food</p>
+                </button></div>
             </div>
         </div>
         <div className={styles.card}>
@@ -71,7 +78,18 @@ const dashboardPage = () => {
                     <p>0% of Goal</p>
                 </div>
                 <div className={styles.card1_chart}>
-                    <Image src={icon} alt="chart" width={150} />
+                    <Gauge width={200} height={150} value={60}
+                    sx={(theme) => ({
+                        [`& .${gaugeClasses.valueText}`]: {
+                          fontSize: 20,
+                        },
+                        [`& .${gaugeClasses.valueArc}`]: {
+                          fill: '#4cae4c',
+                        },
+                        [`& .${gaugeClasses.referenceArc}`]: {
+                          fill: theme.palette.text.disabled,
+                        },
+                      })} />
                 </div>
                 <div className={styles.card1_subheader}>
                     <div className={styles.card1_subheader_content}>
@@ -97,8 +115,8 @@ const dashboardPage = () => {
                         <h2>Protein</h2>
                         <p>0g/120g</p>
                     </div>
-                    <div>
-                        bar
+                    <div className={styles.progress_bar}>
+                        <div className={styles.fill} style={{ width: "50%" }}></div>
                     </div>
                 </div>
                 <div className={styles.card2_content}>
@@ -106,8 +124,8 @@ const dashboardPage = () => {
                         <h2>Carbs</h2>
                         <p>0g/120g</p>
                     </div>
-                    <div>
-                        bar
+                    <div className={styles.progress_bar}>
+                        <div className={styles.fill} style={{ width: "20%" }}></div>
                     </div>
                 </div>
                 <div className={styles.card2_content}>
@@ -115,8 +133,8 @@ const dashboardPage = () => {
                         <h2>Fat</h2>
                         <p>0g/120g</p>
                     </div>
-                    <div>
-                        bar
+                    <div className={styles.progress_bar}>
+                        <div className={styles.fill} style={{ width: "80%" }}></div>
                     </div>
                 </div>
             </div>
@@ -125,28 +143,28 @@ const dashboardPage = () => {
                     <h1>Micronutrient</h1>
                     <div className={styles.micro}>
                         <div className={styles.micro_header}>
-                            <Image src={icon} alt="chart" width={50} />
+                            <Sun className={styles.micro_icon} size={40}  />
                             <div className={styles.micro_subheader}>
                                 <h1>Vitamin C</h1>
                                 <p>85%</p>
                             </div>
                         </div>
                         <div className={styles.micro_header}>
-                            <Image src={icon} alt="chart" width={50} />
+                            <Beef className={styles.micro_icon} size={40} />
                             <div className={styles.micro_subheader}>
-                                <h1>Vitamin C</h1>
+                                <h1>Icon</h1>
                                 <p>85%</p>
                             </div>
                         </div>
                         <div className={styles.micro_header}>
-                            <Image src={icon} alt="chart" width={50} />
+                            <Milk className={styles.micro_icon} size={40} />
                             <div className={styles.micro_subheader}>
-                                <h1>Vitamin C</h1>
+                                <h1>Calcium</h1>
                                 <p>85%</p>
                             </div>
                         </div>
                         <div className={styles.micro_header}>
-                            <Image src={icon} alt="chart" width={50} />
+                            <Banana className={styles.micro_icon} size={40} />
                             <div className={styles.micro_subheader}>
                                 <h1>Vitamin C</h1>
                                 <p>85%</p>
@@ -160,7 +178,9 @@ const dashboardPage = () => {
                         <p>bar</p>
                         <p>0L/2.5L</p>
                     </div>
-                    <button className={styles.card3_subheader_btn}>add water</button>
+                    <button className={styles.card3_subheader_btn}>
+                        <CirclePlus size={25} className={styles.icon} />
+                        <p className={styles.icon_content}>add water</p></button>
                 </div>
             </div>
         </div>
