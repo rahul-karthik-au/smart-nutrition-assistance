@@ -8,7 +8,7 @@ import styles from './onboarding.module.css'
 import { generateClient } from 'aws-amplify/data';
 import { UserProfile } from "@/API"
 import { createUserProfile } from "@/graphql/mutations"
-import { type CreateUserProfileInput } from "@/API"
+import { useAuthContext } from '@/context/AuthContext'
 
 interface userData{
     firstname:string,
@@ -29,10 +29,10 @@ interface userData{
 const onboardingPage=()=>{
     const client = generateClient<UserProfile>();
     const router=useRouter();
+    const userCheck=useAuthContext();
     const [step,setStep]=useState(0)
     const handleSubmit=async()=>{
-        const input: CreateUserProfileInput = user;
-        const result=await client.graphql({query:createUserProfile,variables:{input:input}})
+        const result=await client.graphql({query:createUserProfile,variables:{input:{email:userCheck?.user?.signInDetails?.loginId,userId:userCheck?.user?.userId,...user}}})
         console.log(result)
     }
     const handleBack=()=>setStep((s)=>s-1)

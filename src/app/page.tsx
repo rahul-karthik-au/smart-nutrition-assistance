@@ -2,6 +2,8 @@
 import { Amplify } from 'aws-amplify';
 import awsAmplifyConfig from '../aws-exports.js'
 import { useState } from 'react';
+import Image from "next/image";
+import icon from "../../public/ChatGPT Image May 10, 2025 at 08_53_01 PM.png"
 import VerificationModal from '../components/VerificationModal';
 import { confirmSignUp,signIn,signOut,signUp,autoSignIn,confirmSignIn } from 'aws-amplify/auth';
 import { useRouter } from 'next/navigation';
@@ -106,13 +108,14 @@ export default function Home() {
     <>
       <div className='container'>
         <div className='intro'>
+          <Image src={icon} alt="icon" width={50} />
           <h1>NutriSmart</h1>
           <h2>Your Personal Nutrition Assistance</h2>
           <p>Track nutrition, get personalized meal recommendations, and achieve your health goals with AI-powered guidance.</p>
           <ul>
-            <li><p>Personalized nutrition tracking</p></li>
-            <li><p>AI-powered meal recommendations</p></li>
-            <li><p>Smart meal planning assistant</p></li>
+            <li className="intro_list"><p>Personalized nutrition tracking</p></li>
+            <li className="intro_list"><p>AI-powered meal recommendations</p></li>
+            <li className="intro_list"><p>Smart meal planning assistant</p></li>
           </ul>
         </div>
         <div className="view">

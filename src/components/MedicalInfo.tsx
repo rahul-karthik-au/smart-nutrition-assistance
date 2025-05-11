@@ -33,16 +33,16 @@ const medicalInfoPage=({data,update}:medicalInfoPage)=>{
             <div className={styles.marginBottom}>
             <label className={styles.medicalInfoLabel}>Food Allergies</label>
             <div className={styles.gridCheckBox}>
-                {["Nuts","Milk","Eggs","Wheat","Soy","Fish","Sea Food","Other"].map((food) => (
+                {["Nuts","Milk","Eggs","Wheat","Soy","Fish","Other","No Food Allergies"].map((food) => (
                         <label key={food} className={styles.checkboxLabel}>
                         <input
                             type="checkbox"
                             value={food}
-                            checked={data.dietaryPreference.includes(food)}
+                            checked={data.foodAllergies.includes(food)}
                             onChange={(e) => {
                             const isChecked = e.target.checked;
-                            const updatedGoals = isChecked ? [...data.dietaryPreference, food]: data.dietaryPreference.filter((f) => f !== food);
-                            update({ dietaryPreference: updatedGoals });
+                            const updatedGoals = isChecked ? [...data.foodAllergies, food]: data.foodAllergies.filter((f) => f !== food);
+                            update({ foodAllergies: updatedGoals });
                             }} />{food}
                         </label>
                     ))}

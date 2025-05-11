@@ -4,6 +4,8 @@
 
 export type CreateUserProfileInput = {
   id?: string | null,
+  email?: string | null,
+  userId?: string | null,
   firstname: string,
   lastname?: string | null,
   age: number,
@@ -20,6 +22,8 @@ export type CreateUserProfileInput = {
 };
 
 export type ModelUserProfileConditionInput = {
+  email?: ModelStringInput | null,
+  userId?: ModelStringInput | null,
   firstname?: ModelStringInput | null,
   lastname?: ModelStringInput | null,
   age?: ModelIntInput | null,
@@ -95,6 +99,8 @@ export type ModelIntInput = {
 export type UserProfile = {
   __typename: "UserProfile",
   id: string,
+  email?: string | null,
+  userId?: string | null,
   firstname: string,
   lastname?: string | null,
   age: number,
@@ -114,6 +120,8 @@ export type UserProfile = {
 
 export type UpdateUserProfileInput = {
   id: string,
+  email?: string | null,
+  userId?: string | null,
   firstname?: string | null,
   lastname?: string | null,
   age?: number | null,
@@ -135,6 +143,8 @@ export type DeleteUserProfileInput = {
 
 export type ModelUserProfileFilterInput = {
   id?: ModelIDInput | null,
+  email?: ModelStringInput | null,
+  userId?: ModelStringInput | null,
   firstname?: ModelStringInput | null,
   lastname?: ModelStringInput | null,
   age?: ModelIntInput | null,
@@ -179,6 +189,8 @@ export type ModelUserProfileConnection = {
 
 export type ModelSubscriptionUserProfileFilterInput = {
   id?: ModelSubscriptionIDInput | null,
+  email?: ModelSubscriptionStringInput | null,
+  userId?: ModelSubscriptionStringInput | null,
   firstname?: ModelSubscriptionStringInput | null,
   lastname?: ModelSubscriptionStringInput | null,
   age?: ModelSubscriptionIntInput | null,
@@ -249,6 +261,8 @@ export type CreateUserProfileMutation = {
   createUserProfile?:  {
     __typename: "UserProfile",
     id: string,
+    email?: string | null,
+    userId?: string | null,
     firstname: string,
     lastname?: string | null,
     age: number,
@@ -276,6 +290,8 @@ export type UpdateUserProfileMutation = {
   updateUserProfile?:  {
     __typename: "UserProfile",
     id: string,
+    email?: string | null,
+    userId?: string | null,
     firstname: string,
     lastname?: string | null,
     age: number,
@@ -303,6 +319,8 @@ export type DeleteUserProfileMutation = {
   deleteUserProfile?:  {
     __typename: "UserProfile",
     id: string,
+    email?: string | null,
+    userId?: string | null,
     firstname: string,
     lastname?: string | null,
     age: number,
@@ -329,6 +347,8 @@ export type GetUserProfileQuery = {
   getUserProfile?:  {
     __typename: "UserProfile",
     id: string,
+    email?: string | null,
+    userId?: string | null,
     firstname: string,
     lastname?: string | null,
     age: number,
@@ -359,6 +379,8 @@ export type ListUserProfilesQuery = {
     items:  Array< {
       __typename: "UserProfile",
       id: string,
+      email?: string | null,
+      userId?: string | null,
       firstname: string,
       lastname?: string | null,
       age: number,
@@ -387,6 +409,8 @@ export type OnCreateUserProfileSubscription = {
   onCreateUserProfile?:  {
     __typename: "UserProfile",
     id: string,
+    email?: string | null,
+    userId?: string | null,
     firstname: string,
     lastname?: string | null,
     age: number,
@@ -413,6 +437,8 @@ export type OnUpdateUserProfileSubscription = {
   onUpdateUserProfile?:  {
     __typename: "UserProfile",
     id: string,
+    email?: string | null,
+    userId?: string | null,
     firstname: string,
     lastname?: string | null,
     age: number,
@@ -439,6 +465,8 @@ export type OnDeleteUserProfileSubscription = {
   onDeleteUserProfile?:  {
     __typename: "UserProfile",
     id: string,
+    email?: string | null,
+    userId?: string | null,
     firstname: string,
     lastname?: string | null,
     age: number,

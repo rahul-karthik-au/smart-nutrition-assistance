@@ -1,0 +1,143 @@
+.dashboard_container{
+    display: flex;
+    width: 100%;
+}
+.sidebar{
+    border-right: 2px solid #6a6a6a;
+    width: 15rem;
+    height:100dvh;
+    display: flex;
+    flex-direction: column;
+}
+.border_bottom{
+    border-bottom: 2px solid #6a6a6a;
+}
+.sidebar_heading img{
+    display: inline;
+}
+.sidebar_heading{
+    padding: 1rem 1rem 1rem 0.25rem;
+    height:4rem;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+.sidebar_heading img{
+    display: inline;
+}
+.sidebar_heading h1{
+    display: inline;
+    padding-left: 0.10rem;
+}
+.sidebar_profile{
+   padding:0.5rem 0 0.5rem 0.25rem; 
+   height: 4rem;
+}
+.sidebar_profile img{
+    display: inline;
+}
+.sidebar_profile h1{
+    padding-left: 0.25rem;
+    display: inline;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+.sidebar_navigation{
+    padding: 0.5rem;
+    height: 40rem;
+}
+.sidebar_navigation li{
+    list-style-type: none;
+    padding: 1rem 0.5rem;
+    font-weight: 400;
+    font-size: 1rem;
+}
+.sidebar_navigation li:hover{
+    background-color: #9ed89d;
+    color: #358435;
+    border-radius: 0.5rem;
+}
+.sidebar_navigation li.active{
+    background-color: #9ed89d;
+    color: #358435;
+    border-radius: 0.5rem;
+}
+.sidebar_footer{
+    padding: 0.5rem 0 0.5rem 0.5rem;
+}
+.sidebar_footer div{
+    margin-bottom: 0.5rem;
+}
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.main_header{
+    padding: 1rem;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+}
+.heading{
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.main_subheader{
+    display: flex;
+    justify-content: flex-end;
+}
+.date{
+    background-color: #f4faf3;
+    border-radius: 0.25rem;
+    padding: 0.25rem 1rem 1rem 1rem;
+    margin-right: 1rem;
+    color:#358435;
+    font-size: 0.9rem;
+}
+.main_btn{
+    background-color: #358435;
+    border-radius: 0.25rem;
+    padding: 0.25rem 1rem;
+    color:#f4faf3;
+    font-size: 0.9rem;
+}
+.card{
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat( 3 , 1fr);
+    gap:1rem;
+}
+.card1,
+.card2,
+.card3{
+    border:2px solid #6a6a6a;
+    height: 20rem;
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+}
+.log_selector{
+   width: 21rem;
+   margin: 1rem 1rem 0 1rem;
+   padding: 0 0.25rem 0 0;
+}
+.log{
+    flex:1;
+    margin: 1rem;
+    border: 2px solid #6a6a6a;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+}
+.log_ul{
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.25rem;
+  background-color: #358435;
+  border-radius: 0.5rem;
+  color: #b3e8b3;
+}
+.log_ul>li{
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}

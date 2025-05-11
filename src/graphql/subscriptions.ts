@@ -13,6 +13,8 @@ export const onCreateUserProfile = /* GraphQL */ `subscription OnCreateUserProfi
 ) {
   onCreateUserProfile(filter: $filter) {
     id
+    email
+    userId
     firstname
     lastname
     age
@@ -40,6 +42,8 @@ export const onUpdateUserProfile = /* GraphQL */ `subscription OnUpdateUserProfi
 ) {
   onUpdateUserProfile(filter: $filter) {
     id
+    email
+    userId
     firstname
     lastname
     age
@@ -67,6 +71,8 @@ export const onDeleteUserProfile = /* GraphQL */ `subscription OnDeleteUserProfi
 ) {
   onDeleteUserProfile(filter: $filter) {
     id
+    email
+    userId
     firstname
     lastname
     age
