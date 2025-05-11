@@ -115,6 +115,81 @@
     border-radius: 0.75rem;
     padding: 0.5rem;
 }
+.card1_header,
+.card2_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+.card1_header h1{
+    font-weight: 600;
+    font-size: 1rem;
+}
+.card1_header p,
+.card2_header p{
+    font-size: 0.75rem;
+}
+.card1_chart{
+    display: flex;
+    justify-content: center;
+}
+.card1_subheader{
+    padding: 1rem 0.5rem 0.75rem 0rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+.card1_subheader_content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.card1_subheader_content p{
+    font-weight: 600;
+}
+.card1_footer{
+    text-align: center;
+}
+.card1_footer span{
+    font-weight: 600;
+}
+.card2_header h1,
+.card3_header h1{
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+.card2_header p{
+    font-size: 1rem;
+}
+.card2_content{
+    display: flex;
+    padding: 0.75rem 0.5rem;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+.card2_content_header{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.15rem;
+}
+.micro{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.micro_header{
+    display: flex;
+    flex-direction: row;
+    gap:0.25rem;
+    margin: 1rem;
+}
+.card3_subheader h1{
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.card3_subheader_content{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
 .log_selector{
    width: 21rem;
    margin: 1rem 1rem 0 1rem;

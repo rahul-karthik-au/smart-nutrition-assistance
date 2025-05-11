@@ -65,9 +65,104 @@ const dashboardPage = () => {
             </div>
         </div>
         <div className={styles.card}>
-            <div className={styles.card1}>Card 1</div>
-            <div className={styles.card2}>Card 2</div>
-            <div className={styles.card3}>Card 3</div>
+            <div className={styles.card1}>
+                <div className={styles.card1_header}>
+                    <h1>Daily Calories</h1>
+                    <p>0% of Goal</p>
+                </div>
+                <div className={styles.card1_chart}>
+                    <Image src={icon} alt="chart" width={150} />
+                </div>
+                <div className={styles.card1_subheader}>
+                    <div className={styles.card1_subheader_content}>
+                        <h3>Consumed</h3>
+                        <p>0</p>
+                    </div>
+                    <div className={styles.card1_subheader_content}>
+                        <h3>Goal</h3>
+                        <p>2500</p>
+                    </div>
+                </div>
+                <div className={styles.card1_footer}>
+                    <p>Remaining:<span> 2500 </span>kcal</p>
+                </div>
+            </div>
+            <div className={styles.card2}>
+                <div className={styles.card2_header}>
+                    <h1>MacroNutrients</h1>
+                    <p>Details</p>
+                </div>
+                <div className={styles.card2_content}>
+                    <div className={styles.card2_content_header}>
+                        <h2>Protein</h2>
+                        <p>0g/120g</p>
+                    </div>
+                    <div>
+                        bar
+                    </div>
+                </div>
+                <div className={styles.card2_content}>
+                    <div className={styles.card2_content_header}>
+                        <h2>Carbs</h2>
+                        <p>0g/120g</p>
+                    </div>
+                    <div>
+                        bar
+                    </div>
+                </div>
+                <div className={styles.card2_content}>
+                    <div className={styles.card2_content_header}>
+                        <h2>Fat</h2>
+                        <p>0g/120g</p>
+                    </div>
+                    <div>
+                        bar
+                    </div>
+                </div>
+            </div>
+            <div className={styles.card3}>
+                <div className={styles.card3_header}>
+                    <h1>Micronutrient</h1>
+                    <div className={styles.micro}>
+                        <div className={styles.micro_header}>
+                            <Image src={icon} alt="chart" width={50} />
+                            <div className={styles.micro_subheader}>
+                                <h1>Vitamin C</h1>
+                                <p>85%</p>
+                            </div>
+                        </div>
+                        <div className={styles.micro_header}>
+                            <Image src={icon} alt="chart" width={50} />
+                            <div className={styles.micro_subheader}>
+                                <h1>Vitamin C</h1>
+                                <p>85%</p>
+                            </div>
+                        </div>
+                        <div className={styles.micro_header}>
+                            <Image src={icon} alt="chart" width={50} />
+                            <div className={styles.micro_subheader}>
+                                <h1>Vitamin C</h1>
+                                <p>85%</p>
+                            </div>
+                        </div>
+                        <div className={styles.micro_header}>
+                            <Image src={icon} alt="chart" width={50} />
+                            <div className={styles.micro_subheader}>
+                                <h1>Vitamin C</h1>
+                                <p>85%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.card3_subheader}>
+                    <h1> Water Intake</h1>
+                    <div className={styles.card3_subheader_content}>
+                        <p>bar</p>
+                        <p>0L/2.5L</p>
+                    </div>
+                    <button className={styles.card3_subheader_btn}>add water</button>
+                </div>
+            </div>
         </div>
         <div className={styles.log_selector}>
             <ul className={styles.log_ul}>
