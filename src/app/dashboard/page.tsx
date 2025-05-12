@@ -31,14 +31,7 @@ const dashboardPage = () => {
     console.log(userCheck?.isLogedin);
     console.log(userCheck?.user);
     useEffect(()=>{
-        const fetchUser=async()=>{
-            const result=await client.graphql({query:getUserProfile,variables:{id:''}})
-            console.log(result)
-        }
         if(userCheck?.isLogedin === false)router.push("/")
-        else{
-            fetchUser();
-        }
     },[])
     function handleClick(){
         console.log("Clicked Sign out")
