@@ -20,3 +20,18 @@ type UserProfile @model  {
   foodAllergies: [String]
   additionalNotes: String
 }
+
+type food @model{
+  id:ID!
+  email: String
+  userId: String
+  foodname:String
+  calorie:Int!
+  protein:Int!
+  carbs:Int!
+  fats:Int!
+  vitaminc:Int!
+  iron:Int!
+  calcium:Int!
+  potassium:Int!
+}

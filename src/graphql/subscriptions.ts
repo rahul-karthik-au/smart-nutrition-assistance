@@ -95,3 +95,72 @@ export const onDeleteUserProfile = /* GraphQL */ `subscription OnDeleteUserProfi
   APITypes.OnDeleteUserProfileSubscriptionVariables,
   APITypes.OnDeleteUserProfileSubscription
 >;
+export const onCreateFood = /* GraphQL */ `subscription OnCreateFood($filter: ModelSubscriptionFoodFilterInput) {
+  onCreateFood(filter: $filter) {
+    id
+    email
+    userId
+    foodname
+    calorie
+    protein
+    carbs
+    fats
+    vitaminc
+    iron
+    calcium
+    potassium
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnCreateFoodSubscriptionVariables,
+  APITypes.OnCreateFoodSubscription
+>;
+export const onUpdateFood = /* GraphQL */ `subscription OnUpdateFood($filter: ModelSubscriptionFoodFilterInput) {
+  onUpdateFood(filter: $filter) {
+    id
+    email
+    userId
+    foodname
+    calorie
+    protein
+    carbs
+    fats
+    vitaminc
+    iron
+    calcium
+    potassium
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateFoodSubscriptionVariables,
+  APITypes.OnUpdateFoodSubscription
+>;
+export const onDeleteFood = /* GraphQL */ `subscription OnDeleteFood($filter: ModelSubscriptionFoodFilterInput) {
+  onDeleteFood(filter: $filter) {
+    id
+    email
+    userId
+    foodname
+    calorie
+    protein
+    carbs
+    fats
+    vitaminc
+    iron
+    calcium
+    potassium
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteFoodSubscriptionVariables,
+  APITypes.OnDeleteFoodSubscription
+>;

@@ -1,7 +1,7 @@
 "use client"
 import { useAuthContext } from "@/context/AuthContext";
 import { useRouter,usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import styles from "@/app/dashboard/dashboard.module.css"
 import  photo  from "../../../public/approved.png"
 import icon from "../../../public/ChatGPT Image May 10, 2025 at 08_53_01 PM.png"
@@ -9,6 +9,10 @@ import Image from "next/image";
 import Link from 'next/link';
 import { Gauge,gaugeClasses } from '@mui/x-charts/Gauge';
 import { Calendar,Plus,CirclePlus,Sun,Beef,Milk,Banana,LayoutDashboard,Utensils,ChartPie,Salad,Bot,Settings,LogOut } from 'lucide-react'
+import AddFoodModal from "@/components/AddFoodModal";
+import { generateClient } from 'aws-amplify/data';
+import { UserProfile } from "@/API"
+import { getUserProfile } from "@/graphql/queries";
 
 const navItems = [
     { label: 'Dashboard', href: '/dashboard',icon: <LayoutDashboard className={styles.icon} size={30} /> },
@@ -20,17 +24,29 @@ const navItems = [
 
 const dashboardPage = () => {
     const router=useRouter();
+    const [showModal, setShowModal] = useState(false);
     const pathname = usePathname();
     const userCheck=useAuthContext();
+    const client = generateClient<UserProfile>();
     console.log(userCheck?.isLogedin);
     console.log(userCheck?.user);
     useEffect(()=>{
+        const fetchUser=async()=>{
+            const result=await client.graphql({query:getUserProfile,variables:{id:''}})
+            console.log(result)
+        }
         if(userCheck?.isLogedin === false)router.push("/")
+        else{
+            fetchUser();
+        }
     },[])
     function handleClick(){
         console.log("Clicked Sign out")
         userCheck?.setIsLogedin(false)
         router.push("/")
+    }
+    function handleAddFood(){
+        console.log("Added Food");
     }
     return (<>
     <div className={styles.dashboard_container}>
@@ -65,12 +81,13 @@ const dashboardPage = () => {
                 <div className={styles.date}>
                     <Calendar className={styles.icon}/>
                     <div className={styles.icon_content}>{new Date().toLocaleDateString('en-US',{year: 'numeric', month: 'long', day: 'numeric'})}</div></div>
-                <div><button className={styles.main_btn}>
+                <div><button className={styles.main_btn} onClick={()=>setShowModal(true)}>
                     <Plus className={styles.icon} size={25} color="#f4faf3"/>
                     <p className={styles.icon_content}>Add Food</p>
                 </button></div>
             </div>
         </div>
+        {showModal && <AddFoodModal isOpen={showModal} onClose={()=>setShowModal(false)} onVerify={()=>handleAddFood}/>}
         <div className={styles.card}>
             <div className={styles.card1}>
                 <div className={styles.card1_header}>
@@ -166,7 +183,7 @@ const dashboardPage = () => {
                         <div className={styles.micro_header}>
                             <Banana className={styles.micro_icon} size={40} />
                             <div className={styles.micro_subheader}>
-                                <h1>Vitamin C</h1>
+                                <h1>Potassium</h1>
                                 <p>85%</p>
                             </div>
                         </div>
@@ -175,7 +192,9 @@ const dashboardPage = () => {
                 <div className={styles.card3_subheader}>
                     <h1> Water Intake</h1>
                     <div className={styles.card3_subheader_content}>
-                        <p>bar</p>
+                        <div className={styles.progress_bar_micro}>
+                            <div className={styles.fill} style={{ width: "10%" }}></div>
+                        </div>
                         <p>0L/2.5L</p>
                     </div>
                     <button className={styles.card3_subheader_btn}>

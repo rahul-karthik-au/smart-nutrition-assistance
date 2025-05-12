@@ -141,6 +141,77 @@ export type DeleteUserProfileInput = {
   id: string,
 };
 
+export type CreateFoodInput = {
+  id?: string | null,
+  email?: string | null,
+  userId?: string | null,
+  foodname?: string | null,
+  calorie: number,
+  protein: number,
+  carbs: number,
+  fats: number,
+  vitaminc: number,
+  iron: number,
+  calcium: number,
+  potassium: number,
+};
+
+export type ModelFoodConditionInput = {
+  email?: ModelStringInput | null,
+  userId?: ModelStringInput | null,
+  foodname?: ModelStringInput | null,
+  calorie?: ModelIntInput | null,
+  protein?: ModelIntInput | null,
+  carbs?: ModelIntInput | null,
+  fats?: ModelIntInput | null,
+  vitaminc?: ModelIntInput | null,
+  iron?: ModelIntInput | null,
+  calcium?: ModelIntInput | null,
+  potassium?: ModelIntInput | null,
+  and?: Array< ModelFoodConditionInput | null > | null,
+  or?: Array< ModelFoodConditionInput | null > | null,
+  not?: ModelFoodConditionInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+};
+
+export type food = {
+  __typename: "food",
+  id: string,
+  email?: string | null,
+  userId?: string | null,
+  foodname?: string | null,
+  calorie: number,
+  protein: number,
+  carbs: number,
+  fats: number,
+  vitaminc: number,
+  iron: number,
+  calcium: number,
+  potassium: number,
+  createdAt: string,
+  updatedAt: string,
+};
+
+export type UpdateFoodInput = {
+  id: string,
+  email?: string | null,
+  userId?: string | null,
+  foodname?: string | null,
+  calorie?: number | null,
+  protein?: number | null,
+  carbs?: number | null,
+  fats?: number | null,
+  vitaminc?: number | null,
+  iron?: number | null,
+  calcium?: number | null,
+  potassium?: number | null,
+};
+
+export type DeleteFoodInput = {
+  id: string,
+};
+
 export type ModelUserProfileFilterInput = {
   id?: ModelIDInput | null,
   email?: ModelStringInput | null,
@@ -184,6 +255,32 @@ export type ModelIDInput = {
 export type ModelUserProfileConnection = {
   __typename: "ModelUserProfileConnection",
   items:  Array<UserProfile | null >,
+  nextToken?: string | null,
+};
+
+export type ModelFoodFilterInput = {
+  id?: ModelIDInput | null,
+  email?: ModelStringInput | null,
+  userId?: ModelStringInput | null,
+  foodname?: ModelStringInput | null,
+  calorie?: ModelIntInput | null,
+  protein?: ModelIntInput | null,
+  carbs?: ModelIntInput | null,
+  fats?: ModelIntInput | null,
+  vitaminc?: ModelIntInput | null,
+  iron?: ModelIntInput | null,
+  calcium?: ModelIntInput | null,
+  potassium?: ModelIntInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+  and?: Array< ModelFoodFilterInput | null > | null,
+  or?: Array< ModelFoodFilterInput | null > | null,
+  not?: ModelFoodFilterInput | null,
+};
+
+export type ModelFoodConnection = {
+  __typename: "ModelFoodConnection",
+  items:  Array<food | null >,
   nextToken?: string | null,
 };
 
@@ -250,6 +347,25 @@ export type ModelSubscriptionIntInput = {
   between?: Array< number | null > | null,
   in?: Array< number | null > | null,
   notIn?: Array< number | null > | null,
+};
+
+export type ModelSubscriptionFoodFilterInput = {
+  id?: ModelSubscriptionIDInput | null,
+  email?: ModelSubscriptionStringInput | null,
+  userId?: ModelSubscriptionStringInput | null,
+  foodname?: ModelSubscriptionStringInput | null,
+  calorie?: ModelSubscriptionIntInput | null,
+  protein?: ModelSubscriptionIntInput | null,
+  carbs?: ModelSubscriptionIntInput | null,
+  fats?: ModelSubscriptionIntInput | null,
+  vitaminc?: ModelSubscriptionIntInput | null,
+  iron?: ModelSubscriptionIntInput | null,
+  calcium?: ModelSubscriptionIntInput | null,
+  potassium?: ModelSubscriptionIntInput | null,
+  createdAt?: ModelSubscriptionStringInput | null,
+  updatedAt?: ModelSubscriptionStringInput | null,
+  and?: Array< ModelSubscriptionFoodFilterInput | null > | null,
+  or?: Array< ModelSubscriptionFoodFilterInput | null > | null,
 };
 
 export type CreateUserProfileMutationVariables = {
@@ -339,6 +455,81 @@ export type DeleteUserProfileMutation = {
   } | null,
 };
 
+export type CreateFoodMutationVariables = {
+  input: CreateFoodInput,
+  condition?: ModelFoodConditionInput | null,
+};
+
+export type CreateFoodMutation = {
+  createFood?:  {
+    __typename: "food",
+    id: string,
+    email?: string | null,
+    userId?: string | null,
+    foodname?: string | null,
+    calorie: number,
+    protein: number,
+    carbs: number,
+    fats: number,
+    vitaminc: number,
+    iron: number,
+    calcium: number,
+    potassium: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateFoodMutationVariables = {
+  input: UpdateFoodInput,
+  condition?: ModelFoodConditionInput | null,
+};
+
+export type UpdateFoodMutation = {
+  updateFood?:  {
+    __typename: "food",
+    id: string,
+    email?: string | null,
+    userId?: string | null,
+    foodname?: string | null,
+    calorie: number,
+    protein: number,
+    carbs: number,
+    fats: number,
+    vitaminc: number,
+    iron: number,
+    calcium: number,
+    potassium: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteFoodMutationVariables = {
+  input: DeleteFoodInput,
+  condition?: ModelFoodConditionInput | null,
+};
+
+export type DeleteFoodMutation = {
+  deleteFood?:  {
+    __typename: "food",
+    id: string,
+    email?: string | null,
+    userId?: string | null,
+    foodname?: string | null,
+    calorie: number,
+    protein: number,
+    carbs: number,
+    fats: number,
+    vitaminc: number,
+    iron: number,
+    calcium: number,
+    potassium: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
 export type GetUserProfileQueryVariables = {
   id: string,
 };
@@ -394,6 +585,60 @@ export type ListUserProfilesQuery = {
       dietaryPreference?: Array< string | null > | null,
       foodAllergies?: Array< string | null > | null,
       additionalNotes?: string | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type GetFoodQueryVariables = {
+  id: string,
+};
+
+export type GetFoodQuery = {
+  getFood?:  {
+    __typename: "food",
+    id: string,
+    email?: string | null,
+    userId?: string | null,
+    foodname?: string | null,
+    calorie: number,
+    protein: number,
+    carbs: number,
+    fats: number,
+    vitaminc: number,
+    iron: number,
+    calcium: number,
+    potassium: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListFoodsQueryVariables = {
+  filter?: ModelFoodFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListFoodsQuery = {
+  listFoods?:  {
+    __typename: "ModelFoodConnection",
+    items:  Array< {
+      __typename: "food",
+      id: string,
+      email?: string | null,
+      userId?: string | null,
+      foodname?: string | null,
+      calorie: number,
+      protein: number,
+      carbs: number,
+      fats: number,
+      vitaminc: number,
+      iron: number,
+      calcium: number,
+      potassium: number,
       createdAt: string,
       updatedAt: string,
     } | null >,
@@ -480,6 +725,78 @@ export type OnDeleteUserProfileSubscription = {
     dietaryPreference?: Array< string | null > | null,
     foodAllergies?: Array< string | null > | null,
     additionalNotes?: string | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnCreateFoodSubscriptionVariables = {
+  filter?: ModelSubscriptionFoodFilterInput | null,
+};
+
+export type OnCreateFoodSubscription = {
+  onCreateFood?:  {
+    __typename: "food",
+    id: string,
+    email?: string | null,
+    userId?: string | null,
+    foodname?: string | null,
+    calorie: number,
+    protein: number,
+    carbs: number,
+    fats: number,
+    vitaminc: number,
+    iron: number,
+    calcium: number,
+    potassium: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateFoodSubscriptionVariables = {
+  filter?: ModelSubscriptionFoodFilterInput | null,
+};
+
+export type OnUpdateFoodSubscription = {
+  onUpdateFood?:  {
+    __typename: "food",
+    id: string,
+    email?: string | null,
+    userId?: string | null,
+    foodname?: string | null,
+    calorie: number,
+    protein: number,
+    carbs: number,
+    fats: number,
+    vitaminc: number,
+    iron: number,
+    calcium: number,
+    potassium: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteFoodSubscriptionVariables = {
+  filter?: ModelSubscriptionFoodFilterInput | null,
+};
+
+export type OnDeleteFoodSubscription = {
+  onDeleteFood?:  {
+    __typename: "food",
+    id: string,
+    email?: string | null,
+    userId?: string | null,
+    foodname?: string | null,
+    calorie: number,
+    protein: number,
+    carbs: number,
+    fats: number,
+    vitaminc: number,
+    iron: number,
+    calcium: number,
+    potassium: number,
     createdAt: string,
     updatedAt: string,
   } | null,

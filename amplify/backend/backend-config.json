@@ -7,7 +7,9 @@
           "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
+              "apiKeyExpirationDate": "2025-05-18T22:49:00.887Z",
+              "apiKeyExpirationDays": 7,
+              "description": "nutrismart"
             },
             "authenticationType": "API_KEY"
           }
@@ -43,6 +45,40 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "nutrismart8c3c6141": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_nutrismart8c3c6141_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "nutrismart8c3c6141"
+        }
+      ]
+    },
+    "AMPLIFY_function_nutrismart8c3c6141_openaiApiKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "nutrismart8c3c6141"
+        }
+      ]
+    },
+    "AMPLIFY_function_nutrismart8c3c6141_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "nutrismart8c3c6141"
+        }
+      ]
     }
   }
 }

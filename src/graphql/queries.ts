@@ -70,3 +70,51 @@ export const listUserProfiles = /* GraphQL */ `query ListUserProfiles(
   APITypes.ListUserProfilesQueryVariables,
   APITypes.ListUserProfilesQuery
 >;
+export const getFood = /* GraphQL */ `query GetFood($id: ID!) {
+  getFood(id: $id) {
+    id
+    email
+    userId
+    foodname
+    calorie
+    protein
+    carbs
+    fats
+    vitaminc
+    iron
+    calcium
+    potassium
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedQuery<APITypes.GetFoodQueryVariables, APITypes.GetFoodQuery>;
+export const listFoods = /* GraphQL */ `query ListFoods(
+  $filter: ModelFoodFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listFoods(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      email
+      userId
+      foodname
+      calorie
+      protein
+      carbs
+      fats
+      vitaminc
+      iron
+      calcium
+      potassium
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<APITypes.ListFoodsQueryVariables, APITypes.ListFoodsQuery>;

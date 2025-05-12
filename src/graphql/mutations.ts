@@ -98,3 +98,81 @@ export const deleteUserProfile = /* GraphQL */ `mutation DeleteUserProfile(
   APITypes.DeleteUserProfileMutationVariables,
   APITypes.DeleteUserProfileMutation
 >;
+export const createFood = /* GraphQL */ `mutation CreateFood(
+  $input: CreateFoodInput!
+  $condition: ModelFoodConditionInput
+) {
+  createFood(input: $input, condition: $condition) {
+    id
+    email
+    userId
+    foodname
+    calorie
+    protein
+    carbs
+    fats
+    vitaminc
+    iron
+    calcium
+    potassium
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateFoodMutationVariables,
+  APITypes.CreateFoodMutation
+>;
+export const updateFood = /* GraphQL */ `mutation UpdateFood(
+  $input: UpdateFoodInput!
+  $condition: ModelFoodConditionInput
+) {
+  updateFood(input: $input, condition: $condition) {
+    id
+    email
+    userId
+    foodname
+    calorie
+    protein
+    carbs
+    fats
+    vitaminc
+    iron
+    calcium
+    potassium
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateFoodMutationVariables,
+  APITypes.UpdateFoodMutation
+>;
+export const deleteFood = /* GraphQL */ `mutation DeleteFood(
+  $input: DeleteFoodInput!
+  $condition: ModelFoodConditionInput
+) {
+  deleteFood(input: $input, condition: $condition) {
+    id
+    email
+    userId
+    foodname
+    calorie
+    protein
+    carbs
+    fats
+    vitaminc
+    iron
+    calcium
+    potassium
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteFoodMutationVariables,
+  APITypes.DeleteFoodMutation
+>;
