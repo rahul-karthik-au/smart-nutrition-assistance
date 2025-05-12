@@ -126,7 +126,7 @@ const dashboardPage = () => {
                         <p>0g/120g</p>
                     </div>
                     <div className={styles.progress_bar}>
-                        <div className={styles.fill} style={{ width: "50%" }}></div>
+                        <div className={styles.fill} style={{ width: "0%" }}></div>
                     </div>
                 </div>
                 <div className={styles.card2_content}>
@@ -135,7 +135,7 @@ const dashboardPage = () => {
                         <p>0g/120g</p>
                     </div>
                     <div className={styles.progress_bar}>
-                        <div className={styles.fill} style={{ width: "20%" }}></div>
+                        <div className={styles.fill} style={{ width: "0%" }}></div>
                     </div>
                 </div>
                 <div className={styles.card2_content}>
@@ -144,7 +144,7 @@ const dashboardPage = () => {
                         <p>0g/120g</p>
                     </div>
                     <div className={styles.progress_bar}>
-                        <div className={styles.fill} style={{ width: "80%" }}></div>
+                        <div className={styles.fill} style={{ width: "0%" }}></div>
                     </div>
                 </div>
             </div>
@@ -186,7 +186,7 @@ const dashboardPage = () => {
                     <h1> Water Intake</h1>
                     <div className={styles.card3_subheader_content}>
                         <div className={styles.progress_bar_micro}>
-                            <div className={styles.fill} style={{ width: "10%" }}></div>
+                            <div className={styles.fill} style={{ width: "0%" }}></div>
                         </div>
                         <p>0L/2.5L</p>
                     </div>
