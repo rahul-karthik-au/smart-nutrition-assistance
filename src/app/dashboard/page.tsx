@@ -88,7 +88,7 @@ const dashboardPage = () => {
                     <p>0% of Goal</p>
                 </div>
                 <div className={styles.card1_chart}>
-                    <Gauge width={200} height={150} value={60}
+                    <Gauge width={200} height={150} value={0}
                     sx={(theme) => ({
                         [`& .${gaugeClasses.valueText}`]: {
                           fontSize: 20,
