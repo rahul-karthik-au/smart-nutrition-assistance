@@ -50,7 +50,7 @@ const dashboardPage = () => {
         </div>
         <div className={`${styles.sidebar_profile} ${styles.border_bottom}`}>
             <Image src={photo} alt="profile pic" width={50} height={40} />
-            <h1>ABC</h1>
+            <h1>RAHUL</h1>
         </div>
         <div className={`${styles.sidebar_navigation} ${styles.border_bottom}`}>
             <ul>
@@ -85,10 +85,10 @@ const dashboardPage = () => {
             <div className={styles.card1}>
                 <div className={styles.card1_header}>
                     <h1>Daily Calories</h1>
-                    <p>0% of Goal</p>
+                    <p>10% of Goal</p>
                 </div>
                 <div className={styles.card1_chart}>
-                    <Gauge width={200} height={150} value={0}
+                    <Gauge width={200} height={150} value={10}
                     sx={(theme) => ({
                         [`& .${gaugeClasses.valueText}`]: {
                           fontSize: 20,
@@ -104,7 +104,7 @@ const dashboardPage = () => {
                 <div className={styles.card1_subheader}>
                     <div className={styles.card1_subheader_content}>
                         <h3>Consumed</h3>
-                        <p>0</p>
+                        <p>250</p>
                     </div>
                     <div className={styles.card1_subheader_content}>
                         <h3>Goal</h3>
@@ -112,7 +112,7 @@ const dashboardPage = () => {
                     </div>
                 </div>
                 <div className={styles.card1_footer}>
-                    <p>Remaining:<span> 2500 </span>kcal</p>
+                    <p>Remaining:<span> 2250 </span>kcal</p>
                 </div>
             </div>
             <div className={styles.card2}>
@@ -123,28 +123,28 @@ const dashboardPage = () => {
                 <div className={styles.card2_content}>
                     <div className={styles.card2_content_header}>
                         <h2>Protein</h2>
-                        <p>0g/120g</p>
+                        <p>10g/120g</p>
                     </div>
                     <div className={styles.progress_bar}>
-                        <div className={styles.fill} style={{ width: "0%" }}></div>
+                        <div className={styles.fill} style={{ width: "8%" }}></div>
                     </div>
                 </div>
                 <div className={styles.card2_content}>
                     <div className={styles.card2_content_header}>
                         <h2>Carbs</h2>
-                        <p>0g/120g</p>
+                        <p>12g/120g</p>
                     </div>
                     <div className={styles.progress_bar}>
-                        <div className={styles.fill} style={{ width: "0%" }}></div>
+                        <div className={styles.fill} style={{ width: "10%" }}></div>
                     </div>
                 </div>
                 <div className={styles.card2_content}>
                     <div className={styles.card2_content_header}>
                         <h2>Fat</h2>
-                        <p>0g/120g</p>
+                        <p>60g/120g</p>
                     </div>
                     <div className={styles.progress_bar}>
-                        <div className={styles.fill} style={{ width: "0%" }}></div>
+                        <div className={styles.fill} style={{ width: "50%" }}></div>
                     </div>
                 </div>
             </div>
@@ -163,21 +163,21 @@ const dashboardPage = () => {
                             <Beef className={styles.micro_icon} size={40} />
                             <div className={styles.micro_subheader}>
                                 <h1>Icon</h1>
-                                <p>85%</p>
+                                <p>25%</p>
                             </div>
                         </div>
                         <div className={styles.micro_header}>
                             <Milk className={styles.micro_icon} size={40} />
                             <div className={styles.micro_subheader}>
                                 <h1>Calcium</h1>
-                                <p>85%</p>
+                                <p>65%</p>
                             </div>
                         </div>
                         <div className={styles.micro_header}>
                             <Banana className={styles.micro_icon} size={40} />
                             <div className={styles.micro_subheader}>
                                 <h1>Potassium</h1>
-                                <p>85%</p>
+                                <p>15%</p>
                             </div>
                         </div>
                     </div>
@@ -186,9 +186,9 @@ const dashboardPage = () => {
                     <h1> Water Intake</h1>
                     <div className={styles.card3_subheader_content}>
                         <div className={styles.progress_bar_micro}>
-                            <div className={styles.fill} style={{ width: "0%" }}></div>
+                            <div className={styles.fill} style={{ width: "45%" }}></div>
                         </div>
-                        <p>0L/2.5L</p>
+                        <p>1L/2.5L</p>
                     </div>
                     <button className={styles.card3_subheader_btn}>
                         <CirclePlus size={25} className={styles.icon} />
