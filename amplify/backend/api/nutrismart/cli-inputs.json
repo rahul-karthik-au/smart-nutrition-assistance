@@ -5,9 +5,9 @@
     "serviceName": "AppSync",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "expirationTime": 7,
-      "apiKeyExpirationDate": "2025-05-18T22:49:00.887Z",
-      "keyDescription": "nutrismart"
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2026-06-07T20:47:50.381Z",
+      "keyDescription": "nutrismart1"
     },
     "conflictResolution": {},
     "additionalAuthTypes": []

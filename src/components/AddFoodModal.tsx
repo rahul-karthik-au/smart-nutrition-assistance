@@ -25,7 +25,7 @@ const AddFoodModal: FC<AddFoodModalProps> =({isOpen,onClose,onVerify})=>{
     const client = generateClient<food>();
     const userCheck=useAuthContext();
     async function handleGenerate(){
-        const result=await client.graphql({query:createFood,variables:{input:{email:userCheck?.user?.signInDetails?.loginId,userId:userCheck?.user?.userId,foodname:foodname,calorie:calorie,protein:protein,fats:fats,carbs:carbs,vitaminc:vitaminc,iron:iron,calcium:calcium,potassium:potassium}}})
+        const result=await client.graphql({query:createFood,variables:{input:{email:userCheck?.user?.signInDetails?.loginId,userId:userCheck?.user?.userId,foodname:foodname,calorie:calorie,protein:protein,fats:fats,carbs:carbs,vitaminc:vitaminc,iron:iron,calcium:calcium,potassium:potassium}},authMode: "apiKey"})
         console.log(result)
         onClose();
     }

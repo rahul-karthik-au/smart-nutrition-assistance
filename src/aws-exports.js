@@ -3,6 +3,10 @@
 
 const awsmobile = {
     "aws_project_region": process.env.NEXT_PUBLIC_aws_project_region,
+    "aws_appsync_graphqlEndpoint": process.env.NEXT_PUBLIC_aws_appsync_graphqlEndpoint,
+    "aws_appsync_region": process.env.NEXT_PUBLIC_aws_project_region,
+    "aws_appsync_authenticationType": "API_KEY",
+    "aws_appsync_apiKey": process.env.NEXT_PUBLIC_aws_appsync_apiKey,
     "aws_cognito_identity_pool_id": process.env.NEXT_PUBLIC_aws_cognito_identity_pool_id,
     "aws_cognito_region": process.env.NEXT_PUBLIC_aws_project_region,
     "aws_user_pools_id": process.env.NEXT_PUBLIC_aws_user_pools_id,
@@ -25,11 +29,7 @@ const awsmobile = {
     },
     "aws_cognito_verification_mechanisms": [
         "EMAIL"
-    ],
-    "aws_appsync_graphqlEndpoint": process.env.NEXT_PUBLIC_aws_appsync_graphqlEndpoint,
-    "aws_appsync_region": process.env.NEXT_PUBLIC_aws_project_region,
-    "aws_appsync_authenticationType": "API_KEY",
-    "aws_appsync_apiKey": process.env.NEXT_PUBLIC_aws_appsync_apiKey
+    ]
 };
 
 

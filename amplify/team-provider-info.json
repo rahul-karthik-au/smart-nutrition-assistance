@@ -1,8 +1,22 @@
 {
   "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nutrismart-dev-e1d5c-authRole",
+      "UnauthRoleArn": "arn:aws:iam::396608782788:role/amplify-nutrismart-dev-e1d5c-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::396608782788:role/amplify-nutrismart-dev-e1d5c-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-nutrismart-dev-e1d5c-deployment",
+      "UnauthRoleName": "amplify-nutrismart-dev-e1d5c-unauthRole",
+      "StackName": "amplify-nutrismart-dev-e1d5c",
+      "StackId": "arn:aws:cloudformation:us-east-1:396608782788:stack/amplify-nutrismart-dev-e1d5c/644ebe60-261b-11f0-a8cf-0affcebb962b",
+      "AmplifyAppId": "d2n8p6v2putsmh"
+    },
     "categories": {
       "auth": {
         "nutrismart4e048f91": {}
+      },
+      "api": {
+        "nutrismart": {}
       }
     }
   }
