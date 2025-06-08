@@ -66,7 +66,7 @@ const dashboardPage = () => {
             <Image src={photo} alt="profile pic" width={50} height={40} />
             <h1>RAHUL</h1>
         </div>
-        <div className={`${styles.sidebar_navigation} ${styles.border_bottom}`}>
+        <div className={`${styles.sidebar_navigation}`}>
             <ul>
             {navItems.map((item)=>{return(<li key={item.label} className={`${pathname === item.href ? styles.active : ''}`} >
             

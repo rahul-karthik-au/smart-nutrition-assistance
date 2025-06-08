@@ -4,14 +4,14 @@
     width: 100%;
 }
 .sidebar{
-    border-right: 2px solid #6a6a6a;
+    border-right: 0.0625rem solid #6a6a6a;
     width: 18rem;
     height:100dvh;
     display: flex;
     flex-direction: column;
 }
 .border_bottom{
-    border-bottom: 2px solid #6a6a6a;
+    border-bottom: 0.0625rem solid #6a6a6a;
 }
 .sidebar_heading img{
     display: inline;
@@ -63,6 +63,8 @@
     border-radius: 0.5rem;
 }
 .sidebar_footer{
+    border-top: 0.0625rem solid #6a6a6a;
+    margin-top: 6rem;
     padding: 0.5rem 0 0.5rem 0.5rem;
 }
 .sidebar_footer div{
@@ -119,7 +121,7 @@
 .card1,
 .card2,
 .card3{
-    border:2px solid #6a6a6a;
+    border:0.0625rem solid #6a6a6a;
     height: 20rem;
     border-radius: 0.75rem;
     padding: 0.5rem;
@@ -226,25 +228,25 @@
 }
 .log_selector{
    width: 21rem;
-   margin: 1rem 1rem 0 1rem;
-   padding: 0 0.25rem 0 0;
+   margin: 1rem;
+   padding: 0 0.5rem 0 0;
 }
 .log{
     flex:1;
     margin: 1rem;
-    border: 2px solid #6a6a6a;
+    border: 0.0625rem solid #6a6a6a;
     padding: 0.5rem;
     border-radius: 0.75rem;
 }
 .log_ul{
   display: flex;
   list-style-type: none;
-  padding: 0;
+  padding: 0.25rem;
   margin: 0;
-  gap: 0.25rem;
+  gap: 0.15rem;
   background-color: #358435;
   border-radius: 0.5rem;
-  color: #b3e8b3;
+  color: #fcfdfc;
 }
 .log_ul>li{
   padding: 0.25rem 0.5rem;
