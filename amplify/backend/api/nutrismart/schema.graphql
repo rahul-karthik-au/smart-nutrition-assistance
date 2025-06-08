@@ -35,3 +35,6 @@ type food @model{
   calcium:Int!
   potassium:Int!
 }
+type Mutation {
+  callSampleFunction(input: String): String @function(name: "nutrisample-${env}")
+}

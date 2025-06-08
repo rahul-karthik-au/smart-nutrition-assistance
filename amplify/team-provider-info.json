@@ -17,6 +17,12 @@
       },
       "api": {
         "nutrismart": {}
+      },
+      "function": {
+        "nutrisample": {
+          "deploymentBucketName": "amplify-nutrismart-dev-e1d5c-deployment",
+          "s3Key": "amplify-builds/nutrisample-756c5462714c57376776-build.zip"
+        }
       }
     }
   }

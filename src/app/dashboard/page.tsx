@@ -13,6 +13,7 @@ import AddFoodModal from "@/components/AddFoodModal";
 import { generateClient } from 'aws-amplify/data';
 import { UserProfile } from "@/API"
 import { getUserProfile } from "@/graphql/queries";
+import { callSampleFunction } from "@/graphql/mutations";
 
 const navItems = [
     { label: 'Dashboard', href: '/dashboard',icon: <LayoutDashboard className={styles.icon} size={30} /> },
@@ -27,11 +28,24 @@ const dashboardPage = () => {
     const [showModal, setShowModal] = useState(false);
     const pathname = usePathname();
     const userCheck=useAuthContext();
-    const client = generateClient<UserProfile>();
+    const client = generateClient();
     console.log(userCheck?.isLogedin);
     console.log(userCheck?.user);
+    async function check(){
+        try {
+    const result = await client.graphql({
+      query: callSampleFunction,
+      variables: { input:"Test from frontend" },
+      authMode: 'apiKey',
+    });
+    console.log('Lambda response:', result.data.callSampleFunction);
+  } catch (error) {
+    console.error('Error calling Lambda:', error);
+  }
+    }
     useEffect(()=>{
         if(userCheck?.isLogedin === false)router.push("/")
+        check()
     },[])
     function handleClick(){
         console.log("Clicked Sign out")

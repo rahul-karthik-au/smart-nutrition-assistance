@@ -1,5 +1,5 @@
 .card{
-    background-color: #f0f7ef;
+    background-color: white;
     display: flex;
     flex-direction: column;
     margin-top: 8rem;
@@ -34,7 +34,7 @@
     padding: 1rem 1rem;
 }
 .prevbtn{
-    background-color: #f4faf3;
+    background-color:white;
     color: #9ed89d;
     display: inline-flex;
     align-items: center;

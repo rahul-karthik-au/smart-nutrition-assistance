@@ -8,6 +8,13 @@ type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationOutput: OutputType;
 };
 
+export const callSampleFunction = /* GraphQL */ `mutation CallSampleFunction($input: String) {
+  callSampleFunction(input: $input)
+}
+` as GeneratedMutation<
+  APITypes.CallSampleFunctionMutationVariables,
+  APITypes.CallSampleFunctionMutation
+>;
 export const createUserProfile = /* GraphQL */ `mutation CreateUserProfile(
   $input: CreateUserProfileInput!
   $condition: ModelUserProfileConditionInput

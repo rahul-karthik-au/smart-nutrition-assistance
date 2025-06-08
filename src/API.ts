@@ -368,6 +368,14 @@ export type ModelSubscriptionFoodFilterInput = {
   or?: Array< ModelSubscriptionFoodFilterInput | null > | null,
 };
 
+export type CallSampleFunctionMutationVariables = {
+  input?: string | null,
+};
+
+export type CallSampleFunctionMutation = {
+  callSampleFunction?: string | null,
+};
+
 export type CreateUserProfileMutationVariables = {
   input: CreateUserProfileInput,
   condition?: ModelUserProfileConditionInput | null,

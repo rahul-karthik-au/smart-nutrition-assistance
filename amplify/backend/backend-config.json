@@ -47,5 +47,29 @@
       "service": "Cognito"
     }
   },
-  "function": {}
+  "function": {
+    "nutrisample": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_nutrisample_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "nutrisample"
+        }
+      ]
+    },
+    "AMPLIFY_function_nutrisample_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "nutrisample"
+        }
+      ]
+    }
+  }
 }
